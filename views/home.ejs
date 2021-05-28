@@ -1,0 +1,24 @@
+<%- include("partials/header") -%>
+
+<h1>Hello</h1>
+
+<p> <%= homeContent %> </p>
+
+<% console.log(newPostUpdate)%>
+
+<% newPostUpdate.forEach(function(newPosts) { %>
+
+  <h1><%= newPosts.title %></h1>
+  <p>
+    <%=  newPosts.content.substring(0,100) + "..." %>
+    <a href="/posts/<%=newPosts.title%>">Read More</a>
+  </p>
+<% }); %>
+
+<form class="item" action="/" method="post">
+
+<button class="btn btn-primary" type="submit" name="compose">Compose</button>
+</form>
+
+
+<%- include("partials/footer") -%>
